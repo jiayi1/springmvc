@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <property resource="generator/generator.propertites"></property>
+    <context id="Example" defaultModelType="flat"
+             targetRuntime="tk.mybatis.mapper.generator.MyBatis3UpdatedMsIdIImpl">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="autoDelimitKeywords" value="true"/>
+
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+        </plugin>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers"
+                      value="tk.mybatis.mapper.common.BaseMapper,tk.mybatis.mapper.common.RowBoundsMapper,tk.mybatis.mapper.common.ExampleMapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc}"
+                        connectionURL="${url}"
+                        userId="${user}"
+                        password="${password}"/>
+
+        <javaModelGenerator targetPackage="com.liu.test.dao.generated.entity" targetProject="${targetJavaProject}"/>
+        <sqlMapGenerator targetPackage="mapper" targetProject="${targetResourcesProject}"/>
+
+        <javaClientGenerator targetPackage="${targetMapperPackage}"
+                             targetProject="${targetJavaProject}"
+                             type="XMLMAPPER">
+            <property name="rootInterface" value="com.liu.test.dao.MarkerInterface"/>
+        </javaClientGenerator>
+
+
+        <!--以下是和数据库绑定的,要想生成不同的对象,只要和-->
+        <table tableName="liu" domainObjectName="LiuEntity">
+            <generatedKey column="_id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="yu" domainObjectName="YuEntity">
+            <generatedKey column="num" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
