@@ -18,25 +18,25 @@ public class TestService {
     @Autowired
     LiuEntityMapper liuEntityMapper;
 
-    public void getList() {
+    public List<LiuEntity> getList() {
         LiuEntityExample entityExample = new LiuEntityExample();
-        entityExample.createCriteria().andIdEqualTo(1);
         List<LiuEntity> list = liuEntityMapper.selectByConcreteExample(entityExample);
-       for (LiuEntity entity:list){
-           System.out.println(entity.getName());
-       }
+        for (LiuEntity entity : list) {
+            System.out.println(entity.getName());
+        }
+        return list;
     }
 
-    public void insert(){
+    public void insert(String name, int age, String addr, int num) {
         LiuEntity entity = new LiuEntity();
-        entity.setName("aaaa");
-        entity.setAge(10);
-        entity.setAddr("nj");
-        entity.setNum(12);
+        entity.setName(name);
+        entity.setAge(age);
+        entity.setAddr(addr);
+        entity.setNum(num);
         liuEntityMapper.insertSelective(entity);
     }
 
-    public void update(){
+    public void update() {
         LiuEntity entity = new LiuEntity();
         entity.setName("aaaa");
         entity.setAge(10);
@@ -44,10 +44,10 @@ public class TestService {
         entity.setNum(12);
         LiuEntityExample entityExample = new LiuEntityExample();
         entityExample.createCriteria().andIdEqualTo(1);
-        liuEntityMapper.updateByConcreteExampleSelective(entity,entityExample);
+        liuEntityMapper.updateByConcreteExampleSelective(entity, entityExample);
     }
 
-    public void del(){
+    public void del() {
         LiuEntityExample entityExample = new LiuEntityExample();
         entityExample.createCriteria().andIdEqualTo(1);
         liuEntityMapper.deleteByConcreteExample(entityExample);
