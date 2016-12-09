@@ -25,7 +25,7 @@
     <div>请输入年龄:<input type="number" name="age" min="1" max="120" value="12"/></div>
     <div>请输入地址:<input type="text" name="addr"/></div>
     <div>请输入数量:<input type="number" name="num"></div>
-    <div><input type="button" name="submit" value="增加" id="check" onclick="check()"></div>
+    <div><input type="submit" name="submit" value="增加" id="check"></div>
 </form>
 
 <script>

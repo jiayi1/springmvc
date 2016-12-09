@@ -41,6 +41,5 @@
         <table tableName="yu" domainObjectName="YuEntity">
             <generatedKey column="num" sqlStatement="Mysql" identity="true"/>
         </table>
-
     </context>
 </generatorConfiguration>
