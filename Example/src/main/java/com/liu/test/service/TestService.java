@@ -27,29 +27,32 @@ public class TestService {
         return list;
     }
 
-    public void insert(String name, int age, String addr, int num) {
+    public boolean insert(String name, int age, String addr, int num) {
         LiuEntity entity = new LiuEntity();
         entity.setName(name);
         entity.setAge(age);
         entity.setAddr(addr);
         entity.setNum(num);
-        liuEntityMapper.insertSelective(entity);
+        int count =  liuEntityMapper.insertSelective(entity);
+        return count > 0 ? true :false ;
     }
 
-    public void update() {
+    public boolean update(String name, int age, String addr, int num) {
         LiuEntity entity = new LiuEntity();
-        entity.setName("aaaa");
-        entity.setAge(10);
-        entity.setAddr("nj");
-        entity.setNum(12);
+        entity.setName(name);
+        entity.setAge(age);
+        entity.setAddr(addr);
+        entity.setNum(num);
         LiuEntityExample entityExample = new LiuEntityExample();
         entityExample.createCriteria().andIdEqualTo(1);
-        liuEntityMapper.updateByConcreteExampleSelective(entity, entityExample);
+        int count = liuEntityMapper.updateByConcreteExampleSelective(entity, entityExample);
+        return count > 0 ? true :false ;
     }
 
-    public void del() {
+    public boolean del() {
         LiuEntityExample entityExample = new LiuEntityExample();
         entityExample.createCriteria().andIdEqualTo(1);
-        liuEntityMapper.deleteByConcreteExample(entityExample);
+        int count =  liuEntityMapper.deleteByConcreteExample(entityExample);
+        return count > 0 ? true :false ;
     }
 }

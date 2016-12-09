@@ -31,11 +31,4 @@ public class MainController extends BaseController{
     }
 
 
-    @RequestMapping (value = "/getdata",method = RequestMethod.GET)
-    public ModelAndView getData(HttpServletRequest request, HttpServletResponse response){
-        List<LiuEntity>  list = service.getList();
-        ModelAndView mav=new ModelAndView("user_orders");
-        mav.addObject("orders",list);
-        return mav;
-    }
 }

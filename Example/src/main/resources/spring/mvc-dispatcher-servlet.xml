@@ -16,8 +16,24 @@
     <mvc:default-servlet-handler/>
 
     <!-- 开启注解 -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven />
 
+    <bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="interceptors">
+        <list>
+            <ref bean="timeInterceptor"/>
+        </list>
+    </property>
+    <property name="urlMap">
+        <map><!-- SpringMVC提供了特殊的匹配方式 -->
+            <entry key="/*.jsp" value-ref="mainController"></entry>
+        </map>
+    </property>
+    </bean>
+
+
+    <!--拦截器-->
+    <bean id="timeInterceptor" class="com.liu.test.common.TimeInterceptor"/>
     <!--ViewResolver 视图解析器-->
     <!--用于支持Servlet、JSP视图解析-->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
