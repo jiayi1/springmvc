@@ -30,6 +30,7 @@ public class MainController extends BaseController{
         return "index";
     }
 
+
     @RequestMapping (value = "/getdata",method = RequestMethod.GET)
     public ModelAndView getData(HttpServletRequest request, HttpServletResponse response){
         List<LiuEntity>  list = service.getList();
