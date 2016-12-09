@@ -27,6 +27,14 @@ public class TestService {
         return list;
     }
 
+    /**
+     * test reset
+     * @param name
+     * @param age
+     * @param addr
+     * @param num
+     * @return
+     */
     public boolean insert(String name, int age, String addr, int num) {
         LiuEntity entity = new LiuEntity();
         entity.setName(name);
