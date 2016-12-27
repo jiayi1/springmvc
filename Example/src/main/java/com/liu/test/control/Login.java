@@ -18,11 +18,10 @@ public class Login {
     @Autowired
     TestService service;
 
-    @RequestMapping (value = "login" , method = RequestMethod.POST)
+    @RequestMapping (value = "/" , method = RequestMethod.POST)
     public String login(@RequestParam("name") String name, @RequestParam("age") int age, @RequestParam("addr") String addr,
                         @RequestParam("num") int num){
         System.out.print("你访问了login:"+name +","+age);
-        service.insert(name,age,addr,num);
         return "success";
     }
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sitemesh>
+
+    <mapping path="/WEB-INF/pages/*" decorator="/WEB-INF/template/default.jsp"></mapping>
+
+    <mapping path="/app/*" excule="true"></mapping>
+    <content-processor>
+        <tag-rule-bundle class="com.liu.test.common.ContentBundle"></tag-rule-bundle>
+    </content-processor>
+</sitemesh>

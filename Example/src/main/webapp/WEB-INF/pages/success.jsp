@@ -5,13 +5,17 @@
   Time: 下午3:13
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<!DOCTYPE html>
+<cmtitle>success</cmtitle>
+<cmhead>
 
-<h1>跳转成功</h1>
-</body>
-</html>
+</cmhead>
+<cmbody>
+    <div>
+        这是success页面;
+    </div>
+
+</cmbody>
