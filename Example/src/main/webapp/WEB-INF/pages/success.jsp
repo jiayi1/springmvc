@@ -14,8 +14,26 @@
 
 </cmhead>
 <cmbody>
-    <div>
+    <div ng-app="manager" ng-controller="myCtrl">
         这是success页面;
+        {{age}}
+        {{name}}
     </div>
 
 </cmbody>
+<cmfooter>
+
+    <script type="text/javascript">
+        var mainApp = angular.module('manager',['app.base']);
+        mainApp.controller("myCtrl",function($scope ,$http){
+            $scope.age = 19;
+            $http.get("/login/getTestData").success(function(response){
+                $scope.name = response;
+            }).error(function(response){
+                console.log(response);
+                $scope.name= response;
+            });
+        });
+
+    </script>
+</cmfooter>

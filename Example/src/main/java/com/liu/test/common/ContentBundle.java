@@ -12,7 +12,7 @@ import org.sitemesh.tagprocessor.State;
 public class ContentBundle implements TagRuleBundle {
     @Override
     public void install(State state, ContentProperty contentProperty, SiteMeshContext siteMeshContext) {
-        state.addRule("footer",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("footer"),false));
+        state.addRule("cmfooter",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("cmfooter"),false));
         state.addRule("cmbody",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("cmbody"),false));
         state.addRule("cmheader",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("cmheader"),false));
         state.addRule("cmtitle",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("cmtitle"),false));

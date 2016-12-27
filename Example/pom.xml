@@ -21,6 +21,7 @@
         <targetMapperPackage>com.liu.test.dao.generated.mapper</targetMapperPackage>
         <targetModelPackage>com.liu.test.model</targetModelPackage>
         <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
+        <jackson.version>2.5.1</jackson.version>
     </properties>
 
 
@@ -137,6 +138,27 @@
             <groupId>org.sitemesh</groupId>
             <artifactId>sitemesh</artifactId>
             <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+
+
+        <!--
+            添加json解析依赖 还有配置文件中spring-mvc <bean name='MappingJackson2HttpMessageConverter'>这一项,否则报500错误,如果还是报500error
+            则有可能是版本和spring版本不匹配造成的
+         -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
     <build>

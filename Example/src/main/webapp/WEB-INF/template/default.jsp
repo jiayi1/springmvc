@@ -14,22 +14,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/app/angular/angular.min.js"></script>
+    <script src="/app/angular/angular-resource.min.js"></script>
 </head>
 <body>
-
-<div>
-    你好,这是我们的标题
-    <form action="/app/list">
-        <input type="text">
-        <input type="submit" value="递交">
-    </form>
-</div>
 
 <div style="min-height:840px;">
     <sitemesh:write property="cmbody"  />
 </div>
 <div>
-    <sitemesh:write property="footer"/>
+    <sitemesh:write property="cmfooter"/>
 </div>
 <script>
     angular.module('app.base', [])

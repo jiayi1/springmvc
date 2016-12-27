@@ -1,8 +1,10 @@
 package com.liu.test.service;
 
+import com.liu.test.dao.generated.dto.LiuDto;
 import com.liu.test.dao.generated.entity.LiuEntity;
 import com.liu.test.dao.generated.entity.LiuEntityExample;
 import com.liu.test.dao.generated.mapper.LiuEntityMapper;
+import com.liu.test.util.DozerConvertUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +20,14 @@ public class TestService {
     @Autowired
     LiuEntityMapper liuEntityMapper;
 
-    public List<LiuEntity> getList() {
+    public List<LiuDto> getList() {
         LiuEntityExample entityExample = new LiuEntityExample();
         List<LiuEntity> list = liuEntityMapper.selectByConcreteExample(entityExample);
         for (LiuEntity entity : list) {
             System.out.println(entity.getName());
         }
-        return list;
+        List<LiuDto> listDto = DozerConvertUtil.convertList(list,LiuDto.class);
+        return listDto;
     }
 
     /**
