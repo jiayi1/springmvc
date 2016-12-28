@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -49,12 +46,32 @@ public class MainController extends BaseController{
         }
     }
 
+    @RequestMapping(value = "/insert",method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Object> insert(@RequestBody LiuEntity body){
+        boolean isSuccess  = service.insert(body.getName(),body.getAge(),body.getAddr(),body.getNum());
+        Map<String,Object> map = new HashMap<>();
+        map.put("data",isSuccess);
+        return map;
+    }
 
-    @RequestMapping(value = "update",method = RequestMethod.POST)
-    public Response update(@RequestParam("name") String name, @RequestParam("age") int age,
-                           @RequestParam("addr") String addr, @RequestParam("num") int num ){
-        boolean isSuccess  = service.update(name,age,addr,num);
-        return this.success(isSuccess);
+    @RequestMapping(value = "/del")
+    @ResponseBody
+    public Map<String,Object> del(@RequestParam("id") int id){
+        Map<String,Object> map = new HashMap<>();
+        boolean isDelSuccess = service.del(id);
+        map.put("data",isDelSuccess);
+        return  map;
+    }
+
+
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Object> update(@RequestBody LiuEntity body){
+        boolean isSuccess  = service.update(body.getId(),body.getName(),body.getAge(),body.getAddr(),body.getNum());
+        Map<String,Object> map = new HashMap<>();
+        map.put("data",isSuccess);
+        return map;
     }
 
 

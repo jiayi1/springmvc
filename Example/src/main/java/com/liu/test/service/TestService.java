@@ -23,9 +23,6 @@ public class TestService {
     public List<LiuDto> getList() {
         LiuEntityExample entityExample = new LiuEntityExample();
         List<LiuEntity> list = liuEntityMapper.selectByConcreteExample(entityExample);
-        for (LiuEntity entity : list) {
-            System.out.println(entity.getName());
-        }
         List<LiuDto> listDto = DozerConvertUtil.convertList(list,LiuDto.class);
         return listDto;
     }
@@ -48,21 +45,21 @@ public class TestService {
         return count > 0 ? true :false ;
     }
 
-    public boolean update(String name, int age, String addr, int num) {
+    public boolean update(int id,String name, int age, String addr, int num) {
         LiuEntity entity = new LiuEntity();
         entity.setName(name);
         entity.setAge(age);
         entity.setAddr(addr);
         entity.setNum(num);
         LiuEntityExample entityExample = new LiuEntityExample();
-        entityExample.createCriteria().andIdEqualTo(1);
+        entityExample.createCriteria().andIdEqualTo(id);
         int count = liuEntityMapper.updateByConcreteExampleSelective(entity, entityExample);
         return count > 0 ? true :false ;
     }
 
-    public boolean del() {
+    public boolean del(int id) {
         LiuEntityExample entityExample = new LiuEntityExample();
-        entityExample.createCriteria().andIdEqualTo(1);
+        entityExample.createCriteria().andIdEqualTo(id);
         int count =  liuEntityMapper.deleteByConcreteExample(entityExample);
         return count > 0 ? true :false ;
     }
