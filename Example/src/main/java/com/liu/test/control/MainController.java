@@ -37,12 +37,12 @@ public class MainController extends BaseController{
 
     @RequestMapping(value = "/getList")
     @ResponseBody
-    public List<LiuDto> getList(){
+    public Response getList(){
         try {
             List<LiuDto> liuDtos = service.getList();
-            return liuDtos;
+            return this.success(liuDtos);
         } catch (Exception e) {
-            return new ArrayList<>();
+            return this.error("");
         }
     }
 

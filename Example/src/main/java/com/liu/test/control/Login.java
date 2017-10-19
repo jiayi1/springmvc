@@ -1,11 +1,14 @@
 package com.liu.test.control;
 
-import com.liu.test.common.Response;
 import com.liu.test.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by yulong.liu on 2016/12/1.
@@ -33,9 +36,10 @@ public class Login  extends BaseController{
 
     @RequestMapping(value = "/getTestData",method = RequestMethod.GET)
     @ResponseBody
-    public String getTestData(){
-     //   return this.success("name");
-        return "name";
+    public Map<String,Object> getTestData(){
+        Map<String,Object> map = new HashMap<>();
+        map.put("data","yulong");
+        return map;
     }
 
 }

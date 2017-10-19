@@ -14,6 +14,9 @@ public class BaseController {
     protected Response success(Object data) {
         return new Response().success().setData(data);
     }
+    protected Response error(Object data) {
+        return new Response().success().setData(data);
+    }
 }
 
 

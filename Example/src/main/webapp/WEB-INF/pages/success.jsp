@@ -28,7 +28,7 @@
         mainApp.controller("myCtrl",function($scope ,$http){
             $scope.age = 19;
             $http.get("/login/getTestData").success(function(response){
-                $scope.name = response;
+                $scope.name = response.data;
             }).error(function(response){
                 console.log(response);
                 $scope.name= response;

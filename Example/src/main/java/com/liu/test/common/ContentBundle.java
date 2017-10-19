@@ -16,6 +16,7 @@ public class ContentBundle implements TagRuleBundle {
         state.addRule("cmbody",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("cmbody"),false));
         state.addRule("cmheader",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("cmheader"),false));
         state.addRule("cmtitle",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("cmtitle"),false));
+        state.addRule("headview",new ExportTagToContentRule(siteMeshContext,contentProperty.getChild("headview"),false));
     }
 
     @Override
