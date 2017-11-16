@@ -21,10 +21,15 @@ public class TestService {
     LiuEntityMapper liuEntityMapper;
 
     public List<LiuDto> getList() {
-        LiuEntityExample entityExample = new LiuEntityExample();
-        List<LiuEntity> list = liuEntityMapper.selectByConcreteExample(entityExample);
-        List<LiuDto> listDto = DozerConvertUtil.convertList(list,LiuDto.class);
-        return listDto;
+        try {
+            LiuEntityExample entityExample = new LiuEntityExample();
+            List<LiuEntity> list = liuEntityMapper.selectByConcreteExample(entityExample);
+            List<LiuDto> listDto = DozerConvertUtil.convertList(list,LiuDto.class);
+            return listDto;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**
@@ -63,4 +68,5 @@ public class TestService {
         int count =  liuEntityMapper.deleteByConcreteExample(entityExample);
         return count > 0 ? true :false ;
     }
+
 }

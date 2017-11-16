@@ -30,7 +30,7 @@
         <sitemesh:write property="cmbody"/>
     </div>
     <div class="footer">
-
+        Copyright © 2017  京ICP备17043420号
     </div>
 </div>
 <div>

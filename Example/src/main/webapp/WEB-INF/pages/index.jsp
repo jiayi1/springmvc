@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<cmtitle>你好啊</cmtitle>
+<cmtitle>网站建设中</cmtitle>
 <cmhead>
 </cmhead>
 <headview>
@@ -10,32 +10,12 @@
 </headview>
 <cmbody>
     <div ng-app="manager" ng-controller="mainCtrl">
-        <h3>欢迎进入手机管理系统</h3>
-
         <div>
-            /Volumes/software/android_workspace/personanGitHub/springmvc/Example/src/main/webapp
-            <p>
-                <img class="img" src="/app/img/database_charter.png"/>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
-                vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices
-                nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
-                Mauris ante ligula, facilisis sed ornare eu, lobortis in odio.
-                Praesent convallis urna a lacus interdum ut hendrerit risus congue.
-                Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac.
-                In at libero sed nunc venenatis imperdiet sed ornare turpis.
-                Donec vitae dui eget tellus gravida venenatis.
-                Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus.
-                Mauris quis diam velit."
-
-            </p>
+            <h1 style="text-align: center;color:#ffffff;height: 73%">
+                当前网站正在建设中~~~
+            </h1>
+            <h4> 敬请期待...</h4>
         </div>
-
-        <div>
-            <div class="index_left">
-            </div>
-        </div>
-
 
         <div>
             <div ng-repeat="item in data">
@@ -49,7 +29,7 @@
             </div>
             <hr>
         </div>
-        <div>
+        <div hidden="true">
             <div>
                 <form role="form" id="myForm">
                     <div>请输入名字:<input type="text" ng-model="owner.name" required/></div>

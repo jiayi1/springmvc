@@ -11,6 +11,9 @@ public class YuEntity implements Serializable {
 
     private String classname;
 
+    @Column(name = "_id")
+    private Integer id;
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -39,5 +42,19 @@ public class YuEntity implements Serializable {
      */
     public void setClassname(String classname) {
         this.classname = classname;
+    }
+
+    /**
+     * @return _id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * @param id
+     */
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

@@ -16,7 +16,7 @@
     <mvc:default-servlet-handler/>
 
     <!-- 开启注解 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
     <!--用于支持Servlet、JSP视图解析-->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
